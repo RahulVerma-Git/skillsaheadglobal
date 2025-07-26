@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"> 
+            <div class="mt-2 d-flex flex-row justify-content-around">
+                <div class="card">
+                    <div class="card-header text-center">
+                        All Courses
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let item of leftItems" class="left-options" (click)="moveToRight(item)">
+                            <span>{{item.courseName}}</span>
+                            <span class="pull-right"><i class="fa fa-angle-double-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header text-center">
+                        Selected Courses
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let item of rightItems" class="right-options" (click)="moveToLeft(item)">
+                            <span><i class="fa fa-angle-double-left"></i></span>
+                            <span class="pull-right">{{item.courseName}}</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12"> 
+            <div class="card mt-2">
+                <div class="card-header text-center">
+                    Estimation
+                </div>
+                <div class="card-body p-0">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr style="background-color: #7fffd473;">
+                                <td>Course Name</td>
+                                <td class="text-center">Course Duration (Hrs)</td>
+                                <td class="text-end">Course Price (USD)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of rightItems">
+                                <td><a>{{item.courseName}}</a></td>
+                                <td class="text-center">{{item.courseDurationInHrs}}</td>
+                                <td class="text-end">{{item.coursePrice}}</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr style="background-color: #ffd70036;">
+                                <td>Total</td>
+                                <td class="text-center">{{totalCourseDurationInHrs}} (Hrs)</td>
+                                <td class="text-end">$&nbsp;{{totalCoursePrice}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary m-1">Pay</button>
+                                        <button class="btn btn-primary m-1" (click)="showNegotiatePopUp()">Nogotiate</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

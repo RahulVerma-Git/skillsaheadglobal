@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-}
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: "Open Sans", "sans-serif";
+// }
 
 main {
   position: relative;
@@ -50,6 +50,7 @@ main > div h1 {
   background-image: linear-gradient(45deg, #005baa, #000000);
   background-size: 100%;
   background-repeat: repeat;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -162,52 +163,52 @@ main > div > div > a:hover {
 .swiper-slide--one {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("/assets/slides/1.jpg")
-      no-repeat 50% 50% / cover;
+      no-repeat 100% 100% / cover;
 }
 
 .swiper-slide--two {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("/assets/slides/2.jpg")
-      no-repeat 50% 50% / cover;
+      no-repeat 100% 100% / cover;
 }
 
 .swiper-slide--three {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("/assets/slides/3.jpg")
-      no-repeat 50% 50% / cover;
+      no-repeat 100% 100% / cover;
 }
 
 .swiper-slide--four {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("/assets/slides/4.jpg")
-      no-repeat 50% 50% / cover;
+      no-repeat 100% 100% / cover;
 }
 
 .swiper-slide--five {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
     url("/assets/slides/5.jpg")
-      no-repeat 50% 50% / cover;
+      no-repeat 100% 100% / cover;
 }
 
 .swiper-slide--six {
     background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
       url("/assets/slides/6.jpg")
-        no-repeat 50% 50% / cover;
+        no-repeat 100% 100% / cover;
   }
   .swiper-slide--seven {
     background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
       url("/assets/slides/7.jpg")
-        no-repeat 50% 50% / cover;
+        no-repeat 100% 100% / cover;
   }
   .swiper-slide--eight {
     background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
       url("/assets/slides/8.jpg")
-        no-repeat 50% 50% / cover;
+        no-repeat 100% 100% / cover;
   }
   .swiper-slide--nine {
     background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
       url("/assets/slides/9.jpg")
-        no-repeat 50% 50% / cover;
+        no-repeat 100% 100% / cover;
   }
 
 .swiper-3d .swiper-slide-shadow-left,
@@ -228,6 +229,112 @@ main > div > div > a:hover {
 
 @media screen and (min-width: 93.75rem) {
   .swiper {
-    width: 85%;
+    width: 100%;//85%;
   }
+}
+
+.input-group-text{
+  background-color: #005baa !important;
+  color: white !important;
+  border: 3px solid #005baa !important;
+  border-top-left-radius: 20px;
+}
+.input-group > input{
+  border: 3px solid #005baa !important;
+  border-radius: 20px;
+}
+
+/*start : popular courses css*/
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* space between items */
+}
+
+.grid-item {
+  // flex: 1 1 calc(33.333% - 16px); /* 3 items per row with gap */
+  flex: 1 1 calc(25% - 16px); /* 4 items per row with gap */
+  min-width: 200px;               /* prevent shrinking too small */
+  // background-color: #1976d2;
+  // color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Responsive fallback for smaller screens */
+@media (max-width: 768px) {
+  .grid-item {
+    flex: 1 1 calc(50% - 16px); /* 2 items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    flex: 1 1 100%; /* full width */
+  }
+}
+
+//------ 3d card css
+/* Parent container that provides perspective */
+.card-container {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //height: 100vh;
+}
+
+/* The actual card */
+.card-3d {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 15px;
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.1),
+    0 5px 10px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border: 2px solid #9ab6ff;
+}
+
+/* Hover for 3D tilt */
+.card-3d:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/*end : popular courses css*/
+
+.img-fluid{
+  max-width: 200px !important;
+  height: auto !important;
+}
+
+.carousel{
+  min-height: 70svh !important;
+}
+.carousel-indicators button{
+  background-color: grey !important;
+}
+.carousel-inner{
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+}
+.carousel-control-prev{
+  background-color: lightgray !important;
+}
+.carousel-control-next{
+  background-color: lightgray !important;
 }

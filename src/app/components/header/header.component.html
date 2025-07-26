@@ -1,26 +1,72 @@
-<nav class="navbar bg-dark border-bottom border-body navbar-expand-lg" data-bs-theme="dark" style="border-bottom-left-radius: 50px;border-bottom-right-radius: 50px;">
-    <div class="container-fluid">
-      <a class="navbar-brand px-3 py-2" href="#">
-        <img src="/assets/header/skills-ahead-logo.png" alt="Logo" class="d-inline-block align-text-top">
-      </a>
-      <ul class="navbar-nav justify-content-end align-items-center">
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-        </li>
-        <li class="nav-item" (click)="navigateTo('ENQUIRE_NOW')">
-            <a class="nav-link">
-              <button class="btn button-glow" style="width: 80px;height: 80px;border-radius: 50%;">Enquire Now</button>
-            </a>
-        </li>
-    </ul>
+<nav class="navbar bg-dark border-bottom border-body navbar-expand-lg" data-bs-theme="dark" style="border-bottom-left-radius: 50px;border-bottom-right-radius: 50px;"> 
+  <!--start: desktop heder-->
+  <div class="row mx-0 container-fluid" *ngIf="!isMobileDevice">
+        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
+          <a class="navbar-brand justify-content-start px-3 py-2" (click)="navigateTo('HOME')">
+            <img src="/assets/header/skills-ahead-logo.png" alt="Logo" class="d-inline-block align-text-top">
+          </a>
+        </div>
+        <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 input-group desktop-width w-25">
+          <span class="input-group-text"><i class="fa fa-search"></i></span>
+          <input type="text" class="form-control" placeholder="Type here to search">
+        </div> -->
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <ul class="navbar-nav justify-content-end align-items-center">
+            <li class="nav-item">
+              <a class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item" (click)="navigateTo('SERVICES')">
+                <a class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Contact Us</a>
+            </li>
+            <li class="nav-item" (click)="navigateTo('LOGIN')">
+                <a class="nav-link">Sign In</a>
+            </li>
+            <li class="nav-item" (click)="navigateTo('SIGN_UP')">
+              <a class="nav-link">Register</a>
+            </li>
+            <li class="nav-item" (click)="enquiry()">
+                <a class="nav-link">
+                  <button class="btn button-glow" style="width: 80px;height: 80px;border-radius: 50%;">Enquire Now</button>
+                </a>
+            </li>
+          </ul>
+        </div>
+  </div>
+  <!--end: desktop header-->
+
+  <!--start: mobile header-->
+  <div class="row mx-0 container-fluid d-flex flex-column" *ngIf="isMobileDevice">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="navbar-brand" (click)="navigateTo('HOME')">
+        <img src="/assets/header/skills-ahead-logo.png" alt="Logo" class="img-fluid">
+      </div>
+      <div (click)="enquiry()">
+        <a class="nav-link">
+          <button class="btn button-glow" style="width: 80px;height: 60px;">Enquire Now</button>
+        </a>
+      </div>
     </div>
-  </nav>
+    <!-- <div class="justify-content-center input-group mobile-width mt-1">
+      <span class="input-group-text"><i class="fa fa-search"></i></span>
+      <input type="text" class="form-control" placeholder="Type here to search">
+    </div> -->
+    <div class="justify-content-center">
+      <div class="navbar-nav d-flex flex-row justify-content-evenly">
+        <div><a class="nav-link">About Us</a></div>
+        <div (click)="navigateTo('SERVICES')"><a class="nav-link">Services</a></div>
+        <div><a class="nav-link">Contact Us</a></div>
+      </div>
+      <div class="navbar-nav d-flex flex-row justify-content-evenly">
+        <div><a class="nav-link">Sign In</a></div>
+        <div><a class="nav-link">Register</a></div>
+      </div>
+    </div>
+  </div>
+  <!--start: mobile header-->
+</nav>
 
 <div class="row" style="background:linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);">
 

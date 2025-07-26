@@ -1,0 +1,63 @@
+.multiple-select-box-left{
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #005baa85;
+    border-radius: 10px;
+    width: 220px !important;
+  }
+
+  .multiple-select-box-right{
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #078f2169;
+    border-radius: 10px;
+    width: 220px !important;
+  }
+  
+  .left-options{
+    border-radius: 5px;
+    padding: 7px;
+    background: linear-gradient(45deg, #005baa, #000000);
+    color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  
+  .right-options{
+    border-radius: 5px;
+    padding: 7px;
+    background: linear-gradient(45deg, #272d28, #078f21);
+    color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .estimation-box{
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid rgb(33 37 41 / 19%);
+    border-radius: 10px;
+  }
+
+  .table{
+    border-color: white !important;
+    --bs-table-bg:none !important;
+  }
+
+  .card{
+    min-width: 250px;
+  }
+
+  a{
+    text-decoration: underline !important;
+    cursor: pointer;
+  }

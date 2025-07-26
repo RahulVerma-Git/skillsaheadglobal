@@ -1,0 +1,27 @@
+.occupation-option-border{
+    border: 1px solid lightgrey;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+}
+
+.occupation-option-border-mobile{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.occupation-label-border{
+    border-right: 0px;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    height: 100%;
+}
+
+.desc{
+    font-size: 11px;
+    font-style: italic;
+}
+
+.inline-calendar-card {
+    width: 210px;
+  }

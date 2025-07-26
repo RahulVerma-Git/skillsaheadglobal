@@ -1,0 +1,24 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fixed-header {
+  /*height: 60px;
+  background-color: #1976d2;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;*/
+  font-size: 18px;
+  flex-shrink: 0; /* Prevent shrinking when space is tight */
+}
+
+.scrollable-body {
+  flex: 1;
+  overflow-y: auto;
+  /*background: #f5f5f5;*/
+  // padding: 20px;
+  height: 100%; /* Optional depending on context */
+}
