@@ -60,6 +60,7 @@ export class QrRegistrationComponent implements OnInit{
   localEventData:EventData = new EventData();
   userData:RegisterWebinarFormFields = new RegisterWebinarFormFields();
   qrData:any = {};
+  showPanel:string = 'HOME';
 
   //http://localhost:4200/qr-registration?data={"courseId":"1234","courseTitle":"Online Webinar","courseFee":"10","courseDurationInHrs":"20"}
   constructor(@Inject(LOCALE_ID) public locale:string,
@@ -73,6 +74,7 @@ export class QrRegistrationComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.showPanel = 'HOME';
     $("#global-header").css("display","none");
     if(this.sharedService.getLocalStorage("isMobileDevice")!== undefined){
       this.isMobileDevice =  this.sharedService.getLocalStorage("isMobileDevice");
@@ -133,6 +135,10 @@ export class QrRegistrationComponent implements OnInit{
     this.localEventData.eventName="WEBINAR_USER_REGISTRATION_DATA";
     this.localEventData.data=this.userData;
     this.sharedService.eventEmitter.emit(this.localEventData);
+  }
+
+  changePanel(panelname:string){
+    this.showPanel = panelname;
   }
 
   initiatePayment(){

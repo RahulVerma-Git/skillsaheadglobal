@@ -4,7 +4,7 @@
             <img src="/assets/header/skills-ahead-logo.png" alt="Logo" class="d-inline-block align-text-top">
         </div>
     </div>
-    <div class="row mx-0">
+    <div class="row mx-0" [hidden]="showPanel!='HOME'">
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12" style="display: flex;justify-content: center;align-items: center; flex-direction: column;">
                 <img src="/assets/qr-registration/man.png" alt="Logo" style="width: 400px;">
             </div>
@@ -59,8 +59,198 @@
                 </div>
             </div>
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-4 col-sm-12 col-xs-12 fixed-header">
-                <button class="btn btn-lg button-glow text-white" style="float:right !important">BOOK YOUR SPOT NOW AT INR 99/-</button>
+                <button class="btn btn-lg button-glow text-white" style="float:right !important" (click)="changePanel('REGISTRATION')">BOOK YOUR SPOT NOW AT INR 99/-</button>
             </div>
+    </div>
+
+    <!--registration form-->
+    <div class="row mx-0" [hidden]="showPanel!='REGISTRATION'">
+        <div>
+            <mat-stepper [linear]="isLinear" #stepper>
+                <mat-step>
+                <form >
+                    <ng-template matStepLabel>Basic Info</ng-template>
+                    <div class="row mx-0" style="height: 60vh;">
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <h3>{{qrData.courseTitle}} in just &nbsp;<span class="text-success fw-bold"><i class="fa fa-inr"></i>&nbsp;{{qrData.courseFee}} !</span></h3>
+                        </div>
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-2">
+                                <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="userData.name">
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <span class="desc text-wrap">(*Enrollment details will be sent on this email)</span>
+                            <div class="mb-2">
+                                <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="userData.email">
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <span class="desc text-wrap">(*Enrollment details will be sent on this whatsapp number)</span>
+                            <div class="mb-2">
+                                <input type="mobile" class="form-control" placeholder="Whatsapp number" name="mobile" [maxlength]="10" [(ngModel)]="userData.mobile">
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-2">
+                                <input type="text" class="form-control" placeholder="Location" name="location" [(ngModel)]="userData.location">
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row mx-0">
+                                @if (isMobileDevice) {
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p-0">
+                                        <span class="input-group-text">Your Occupation</span>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 occupation-option-border-mobile">
+                                        <div class="d-flex flex-row">
+                                                <div class="d-flex flex-column">
+                                                    <div class="form-check justify-content-start">
+                                                        <input class="form-check-input" type="radio" name="occupation" id="studentRadio">
+                                                        <label class="form-check-label" for="studentRadio">Student</label>
+                                                    </div>
+                                                    <div class="form-check justify-content-start">
+                                                        <input class="form-check-input" type="radio" name="occupation" id="jobSeekerRadio">
+                                                        <label class="form-check-label" for="jobSeekerRadio">Job Seeker</label>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column ms-2">
+                                                    <div class="form-check justify-content-start">
+                                                        <input class="form-check-input" type="radio" name="occupation" id="workingProfessionalRadio">
+                                                        <label class="form-check-label" for="workingProfessionalRadio">Working Professional</label>
+                                                    </div>
+                                                    <div class="form-check justify-content-start">
+                                                        <input class="form-check-input" type="radio" name="occupation" id="otherRadio">
+                                                        <label class="form-check-label" for="otherRadio">Other</label>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                }
+                                @else{
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p-0">
+                                        <span class="input-group-text occupation-label-border">Occupation</span>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 occupation-option-border">
+                                        <div class="d-flex flex-row">
+                                            <div class="d-flex flex-column">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="occupation" id="studentRadio"  [(ngModel)]="userData.occupation" value="STUDENT">
+                                                    <label class="form-check-label" for="studentRadio">Student</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="occupation" id="jobSeekerRadio" [(ngModel)]="userData.occupation" value="JOB_SEEKER">
+                                                    <label class="form-check-label" for="jobSeekerRadio">Job Seeker</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column ms-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="occupation" id="workingProfessionalRadio" [(ngModel)]="userData.occupation" value="WORKING_PROFESSIONAL">
+                                                    <label class="form-check-label" for="workingProfessionalRadio">Working Professional</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="occupation" id="otherRadio" [(ngModel)]="userData.occupation" value="OTHER">
+                                                    <label class="form-check-label" for="otherRadio">Other</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <!-- <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 text-center">
+                            <button class="btn btn-primary" style="width: 30%;">Submit</button>
+                            <button class="pull-right" mat-raised-button>Next</button>
+                        </div> -->
+                    </div>
+                    <div>
+                    <!-- <button mat-button matStepperNext>Next</button> -->
+                    <button class="pull-right" mat-raised-button matStepperNext>Next</button>
+                    </div>
+                </form>
+                </mat-step>
+                <!-- <mat-step>
+                <form>
+                    <ng-template matStepLabel>Pick Schedule</ng-template>
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                            <div class="d-flex flex-row justify-content-around align-items-center">
+                                <mat-card class="inline-calendar-card">
+                                    <mat-calendar [(selected)]="calenderDate"></mat-calendar>
+                                </mat-card>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 d-flex flex-row justify-content-around align-items-center">
+                            <div>
+                                <span [ngxTimepicker]="picker" [value]="selectedTime">
+                                    <app-clock></app-clock>
+                                </span>
+                                <ngx-material-timepicker #picker (timeSet)="onTimeSelected($event)"></ngx-material-timepicker>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 d-flex flex-row justify-content-around align-items-center">
+                            <div class="text-center">
+                                <h3>Your preferred schedule is</h3>
+                                <h5>on&nbsp;<span style="color: #0a79da;">{{selectedDate}}</span></h5>
+                                <h5>at&nbsp;<span style="color: #0a79da;">{{timeForClock.hours<10?'0'+timeForClock.hours:timeForClock.hours}}:{{timeForClock.minutes<10?'0'+timeForClock.minutes:timeForClock.minutes}}&nbsp;{{timeForClock.meridian}}</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                      
+                    <div class="mt-2">
+                    <button class="pull-left" mat-raised-button matStepperPrevious>Back</button>
+                    <button class="pull-right" mat-raised-button matStepperNext>Next</button>
+                    </div>
+                </form>
+                </mat-step> -->
+                <mat-step>
+                <ng-template matStepLabel>Review & Submit</ng-template>
+                @if (isMobileDevice) {
+                    <div style="height: 60vh;">
+                        <table>
+                            <tbody>
+                                <tr><td>Program Name</td></tr>
+                                <tr><td><span style="color:#0a79da">{{qrData.courseTitle}}</span></td></tr>
+                                <tr><td>Program Cost</td></tr>
+                                <tr><td><span style="color:#0a79da"><i class="fa fa-inr"></i>&nbsp;{{qrData.courseFee}} </span></td></tr>
+                                <tr><td>Program Duration</td></tr>
+                                <tr><td><span style="color: #0a79da;">{{qrData.courseDurationInHrs * 60}} minutes</span></td></tr>
+                                <tr><td><span>Your Preferred Schedule For Program</span></td></tr>
+                                <tr><td><span style="color: #0a79da;">{{selectedDate}}&nbsp;</span>
+                                    <span style="color: #0a79da;">{{timeForClock.hours<10?'0'+timeForClock.hours:timeForClock.hours}}:{{timeForClock.minutes<10?'0'+timeForClock.minutes:timeForClock.minutes}}&nbsp;{{timeForClock.meridian}}</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                @else{
+                    <div class="d-flex flex-row justify-content-center" style="height: 60vh;">
+                        <div></div>
+                        <div class="d-flex flex-column">
+                            <div><h5><span>Program Name : </span><span style="color:#0a79da">{{qrData.courseTitle}}</span></h5></div>
+                            <div><h5><span>Program Cost : </span><span style="color:#0a79da"><i class="fa fa-inr"></i>&nbsp;{{qrData.courseFee}} </span></h5></div>
+                            <div><h5><span>Program Duration : </span><span style="color:#0a79da">{{qrData.courseDurationInHrs * 60}} minutes</span></h5></div>
+                            <div><h5>
+                                <span>Your Preferred Schedule For Program : </span>
+                                <span style="color: #0a79da;">{{selectedDate}}&nbsp;</span>
+                                <span style="color: #0a79da;">{{timeForClock.hours<10?'0'+timeForClock.hours:timeForClock.hours}}:{{timeForClock.minutes<10?'0'+timeForClock.minutes:timeForClock.minutes}}&nbsp;{{timeForClock.meridian}}</span>
+                            </h5></div>
+                            <div class="text-center">
+                                <h6 style="font-style: italic;color:#075f32">(Click on submit button to confirm your seat)</h6>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                }
+                <div>
+                    <!-- <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button> -->
+                    <button class="pull-left" mat-raised-button matStepperPrevious>Back</button>
+                    <!-- <button class="pull-right" mat-raised-button (click)="stepper.reset()">Submit</button> -->
+                    <button class="pull-right" mat-raised-button (click)="initiatePayment()">Proceed to Pay</button>
+                </div>
+                </mat-step>
+            </mat-stepper>
+        </div>
     </div>
 </div>
 
