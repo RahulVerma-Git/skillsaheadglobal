@@ -42,7 +42,7 @@ declare var Razorpay:any;
     NgxMaterialTimepickerModule,
     ClockComponent
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  //changeDetection: ChangeDetectionStrategy.OnPush,
   providers:[MatNativeDateModule],
 })
 export class QrRegistrationComponent implements OnInit{
@@ -62,7 +62,7 @@ export class QrRegistrationComponent implements OnInit{
   qrData:any = {};
   showPanel:string = 'HOME';
 
-  //http://localhost:4200/qr-registration?data={"courseId":"1234","courseTitle":"Online Webinar","courseFee":"10","courseDurationInHrs":"20"}
+  //http://localhost:4200/qr-registration?data={"courseId":"aa529bb9-9fac-44eb-a20d-849e2b8137d7","courseTitle":"Online Webinar","courseFee":"10","courseDurationInHrs":"20"}
   constructor(@Inject(LOCALE_ID) public locale:string,
               private sharedService:SharedServiceService,
               private apiService:ApiServiceService,
@@ -75,6 +75,7 @@ export class QrRegistrationComponent implements OnInit{
 
   ngOnInit(): void {
     this.showPanel = 'HOME';
+
     $("#global-header").css("display","none");
     if(this.sharedService.getLocalStorage("isMobileDevice")!== undefined){
       this.isMobileDevice =  this.sharedService.getLocalStorage("isMobileDevice");
@@ -86,10 +87,7 @@ export class QrRegistrationComponent implements OnInit{
       let data = param['data'];
       if(data){
         data = JSON.parse(data);
-        this.qrData.courseTitle = data.courseTitle;
-        this.qrData.courseFee = data.courseFee;
-        this.qrData.courseDurationInHrs = data.courseDurationInHrs;
-        this.qrData.courseId = data.courseId;
+        this.fetchWebinarDetails(data.courseId);
       }
     })
 
@@ -117,6 +115,34 @@ export class QrRegistrationComponent implements OnInit{
       meridian:meridian
     };
     this.sharedService.eventEmitter.emit(this.localEventData);
+  }
+
+  fetchWebinarDetails(webinarId:string){
+    let request = {webinaruid:webinarId}
+    this.apiService.fetchWebinarDetailsById(request).subscribe({
+      next: (response:ApiResponse) => {
+        console.log('fetch webinar successfull', response);
+        if(response.responseCode == 200){
+          this.qrData.courseId = response.data.id;
+          this.qrData.courseTitle = response.data.title;
+          this.qrData.courseFee = response.data.webinarPrice;
+          this.qrData.courseDurationInMinutes = response.data.webinarDurationMinutes;
+          this.qrData.courseDate = formatDate(response.data.webinarDate+" "+response.data.webinarTime,'dd MMMM YYYY hh:mm a',this.locale);
+        }
+        else if(response.responseCode == 204){
+
+        }
+        else{
+
+        }
+      },
+      error: (error) => {
+        console.error('error fetch webinar', error);
+      },
+      complete: () => {
+        console.log('fetch webinar completed');
+      }
+    });
   }
 
   submit(){

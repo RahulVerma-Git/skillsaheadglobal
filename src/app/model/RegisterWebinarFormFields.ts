@@ -25,7 +25,9 @@ export class Payment{
 export class RegisterWebinarFormFields{
     id:number|null=null;
     courseId:number|null=null
-    name:string|null=null;
+    firstName:string|null=null;
+    middleName:string|null=null;
+    lastName:string|null=null;
     email:string|null=null;
     mobile:string|null=null;
     location:string|null=null;
@@ -36,7 +38,9 @@ export class RegisterWebinarFormFields{
     constructor(){
         this.id=null;
         this.courseId=null;
-        this.name=null;
+        this.firstName=null;
+        this.middleName=null;
+        this.lastName=null;
         this.email=null;
         this.mobile=null;
         this.location=null;

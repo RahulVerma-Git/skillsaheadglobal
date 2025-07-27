@@ -42,6 +42,10 @@ export class ApiServiceService {
 
   public registerWebinarUser(data:RegisterWebinarFormFields):Observable<any>{
       return this.httpClient.post(this.mainService.applicationHostUrl+ApiUrl.REGISTER_WEBINAR_USER,data);
-    }
+  }
+
+  public fetchWebinarDetailsById(data:any):Observable<any>{
+      return this.httpClient.post(this.mainService.applicationHostUrl+ApiUrl.FETCH_WEBINAR_BY_ID,data);
+  }
 
 }

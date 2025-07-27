@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class MainServiceService {
 
   applicationContextPath = "skillsaheadglobal";
-  applicationHostUrl = "http://localhost:8080/" + this.applicationContextPath;
+  // applicationHostUrl = "http://localhost:8080/" + this.applicationContextPath;
+  applicationHostUrl = "http://www.skillsaheadglobal.com/" + this.applicationContextPath;
   constructor() { }
 }
