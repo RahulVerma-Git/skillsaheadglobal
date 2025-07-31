@@ -7,6 +7,6 @@ export class MainServiceService {
 
   applicationContextPath = "skillsaheadglobal";
   // applicationHostUrl = "http://localhost:8080/" + this.applicationContextPath;
-  applicationHostUrl = "http://www.skillsaheadglobal.com/" + this.applicationContextPath;
+  applicationHostUrl = "https://www.skillsaheadglobal.com/" + this.applicationContextPath;
   constructor() { }
 }
