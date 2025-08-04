@@ -79,16 +79,16 @@ a{color:inherit;text-decoration:none}
   width:100%;
   margin:auto;
   // max-width:525px;
-  min-height:800px;
+  min-height:700px;
   position:relative;
-  background:url(https://imageio.forbes.com/specials-images/imageserve/631ee877cec6e2d404d7038e/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds) no-repeat center;
+  background:url('/assets/qr-registration/form-background.jpg') no-repeat center;
   box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
   width:100%;
   height:100%;
   position:absolute;
-  padding:20px 70px 50px 70px;
+  padding:20px 20px 50px 20px;
   background:rgb(30 33 39 / 90%);
 }
 .login-html .sign-in-htm,
@@ -123,7 +123,7 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
   color:#fff;
-  border-color:#1161ee;
+  border-color:#3ecddd;
 }
 .login-form{
   min-height:345px;
@@ -138,7 +138,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .input,
 .login-form .group .button{
   width:100%;
-  color:#fff;
+  color:black;
   display:block;
 }
 .login-form .group .input,
@@ -157,7 +157,7 @@ a{color:inherit;text-decoration:none}
   font-size:12px;
 }
 .login-form .group .button{
-  background:#1161ee;
+  background:#3ecddd;
 }
 .login-form .group label .icon{
   width:15px;

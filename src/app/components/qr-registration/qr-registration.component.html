@@ -1,11 +1,11 @@
 <app-loader [hidden]="!showLoader"></app-loader>
 @if (showPaymentCompletedMessage) {
-<div class="d-flex flex-column justify-content-center align-items-center" 
-    style="background-color: antiquewhite;height: 100%;">
+<div class="d-flex flex-column justify-content-center align-items-center m-1" 
+    style="height: 100%;">
     <div><img src="assets/qr-registration/ok.png"/></div>
-    <div><span>Thanks for showing you interest in this webinar.</span></div>
-    <div><span>Details will be shared with you on your registered email <strong>{{userData.email}}</strong> and whatsapp number <strong>{{userData.mobile}}</strong>.</span></div>
-    <div>Please visit our website <a href="https://skillsahead.net">https://skillsahead.net</a> for more details.</div>
+    <div class="text-center fw-bold text-success fs-3"><span>Thanks for showing you interest in this webinar !</span></div>
+    <div class="text-center fs-4 rounded-3 p-2" style="background-color: cornflowerblue;"><span>Details will be shared with you on your registered email <strong>{{userData.email}}</strong> and whatsapp number <strong>{{userData.mobile}}</strong>.</span></div>
+    <div class="text-center fs-5">Please visit our website <a href="https://skillsahead.net" class="text-primary">https://skillsahead.net</a> for more details.</div>
 </div>
 }
 @else {
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="group">
-            <input type="submit" class="button" value="Proceed to Pay">
+            <input type="submit" class="button text-white" value="Proceed to Pay">
             </div>
         </div>
         </form>

@@ -220,7 +220,7 @@ export class QrRegistrationComponent implements OnInit{
               "amount": this.qrData.courseFee * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
               "currency": "INR",
               "name": "Skills Ahead", //your business name
-              "description": "Test Transaction",
+              "description": this.qrData.courseTitle,
               "image": "/assets/header/skills-ahead-logo2.png",
               "order_id": response.data.initiatePayment.transactionId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
               "handler":this.onPaymentSuccess.bind(this),
@@ -230,12 +230,12 @@ export class QrRegistrationComponent implements OnInit{
               //     alert(response.razorpay_signature);
               // },
               "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
-                  "name": "Gaurav Kumar", //your customer's name
-                  "email": "gaurav.kumar@example.com", 
-                  "contact": "9000090000"  //Provide the customer's phone number for better conversion rates 
+                  "name": this.userData.firstName, //your customer's name
+                  "email": this.userData.email, 
+                  "contact": this.userData.mobile  //Provide the customer's phone number for better conversion rates 
               },
               "notes": {
-                  "address": "Razorpay Corporate Office"
+                  "source": "Skills Ahead QR Based Program"
               },
               "theme": {
                   "color": "#0b3763",

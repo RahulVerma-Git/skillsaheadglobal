@@ -9,12 +9,16 @@ import { SharedServiceService } from './app-services/shared-service/shared-servi
 export class AppComponent implements OnInit{
 
   title = 'SkillsAheadGlobal';
+  showHeader:boolean = false;
   
   constructor(private sharedService:SharedServiceService){
 
   }
   ngOnInit(): void {
     this.mobileDevice();
+    if(window.location.href.indexOf('qr-registration')<0){
+      this.showHeader = true;
+    }
   }
 
   mobileDevice(){

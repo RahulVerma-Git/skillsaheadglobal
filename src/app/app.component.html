@@ -1,7 +1,7 @@
 <app-popup></app-popup>
 
 <div class="app-container">
-    <div class="fixed-header" id="global-header">
+    <div class="fixed-header" id="global-header" [hidden]="!showHeader">
         <app-header></app-header>
     </div>
     <div class="scrollable-body">
