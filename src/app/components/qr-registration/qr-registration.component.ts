@@ -216,7 +216,8 @@ export class QrRegistrationComponent implements OnInit{
         console.log('initiate payment successfull', response);
         if(response.responseCode == 200){
           let options = {
-              "key": "rzp_test_OuzWZwerLWicgC", // Enter the Key ID generated from the Dashboard
+              //"key": "rzp_test_OuzWZwerLWicgC", // Enter the Key ID generated from the Dashboard
+              "key":"rzp_live_tbw7e8UfIr4UXX",
               "amount": this.qrData.courseFee * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
               "currency": "INR",
               "name": "Skills Ahead", //your business name
