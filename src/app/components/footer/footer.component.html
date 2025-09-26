@@ -34,42 +34,53 @@
                 <div class="row">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-sm-12 col-12">
                         <div>
-                            <ul style="list-style-type:none" class="ps-0">
-                                <li>
+                            <ul style="list-style-type:none;cursor: pointer;" class="ps-0">
+                                <!-- <li>
                                     Blog
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     About Us
-                                </li>
-                                <li>
+                                </li> -->
+                                <li (click)="navigateTo('CONTACT_US')">
                                     Contact Us
                                 </li>
-                                <li>
+                                <!-- <li>
                                     Career
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div>
                             <ul style="list-style-type:none" class="ps-0">
                                 <li style="float: left;" class="p-2">
-                                    <span><i class="fa fa-youtube-play"></i></span>
+                                    <span><i class="fa-brands fa-youtube"></i></span>
                                 </li>
                                 <li style="float: left;" class="p-2">
-                                    <span><i class="fa fa-instagram"></i></span>
+                                    <span><i class="fa-brands fa-square-instagram"></i></span>
                                 </li>
                                 <li style="float: left;" class="p-2">
-                                    <span><i class="fa fa-facebook"></i></span>
+                                    <span><i class="fa-brands fa-facebook"></i></span>
                                 </li>
                                 <li style="float: left;" class="p-2">
-                                    <span><i class="fa fa-linkedin"></i></span>
+                                    <span><i class="fa-brands fa-linkedin"></i></span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-sm-12 col-12">
                         <button class="btn" style="background-color: goldenrod;border: 1px solid goldenrod;font-family: 'Open Sans';">
-                            <i class="fa fa-file-pdf-o"></i>&nbsp;Download Brochure</button>
+                            <i class="fa fa-file-pdf-o"></i>&nbsp;<a href="https://www.skillsahead.net/wp-content/uploads/2014/11/SkillsAhead_Soft-Skills-Brochure1.pdf" style="text-decoration: none;color: black;">Download Brochure</a></button>
                     </div>
+                </div>
+                <div>
+                    <table class="policy-table">
+                        <tbody>
+                            <tr>
+                                <td><a style="text-decoration: none; color: white;"><span>Terms & Conditions</span></a></td>
+                                <td><a style="text-decoration: none; color: white;"><span>Privacy Policy</span></a></td>
+                                <td><a style="text-decoration: none; color: white;"><span>Refund Policy</span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

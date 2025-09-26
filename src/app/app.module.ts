@@ -24,6 +24,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { QueryComponent } from './components/query/query.component';
 import { QrRegistrationComponent } from './components/qr-registration/qr-registration.component';
+import { ContactUs } from './components/contact-us/contact-us';
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.default,
@@ -44,6 +45,7 @@ const ngWizardConfig: NgWizardConfig = {
     CourseCustomizationComponent,
     LoginComponent,
     QueryComponent,
+    ContactUs,
     //PublicSpeakingComponent
   ],
   imports: [

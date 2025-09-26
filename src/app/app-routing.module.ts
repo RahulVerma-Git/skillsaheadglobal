@@ -8,6 +8,7 @@ import { CourseCustomizationComponent } from './components/course-customization/
 import { PublicSpeakingComponent } from './components/public-speaking/public-speaking.component';
 import { LoginComponent } from './components/login/login.component';
 import { QrRegistrationComponent } from './components/qr-registration/qr-registration.component';
+import { ContactUs } from './components/contact-us/contact-us';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"public-speaking",component:PublicSpeakingComponent},
   {path:"qr-registration",component:QrRegistrationComponent},
   {path:"login",component:LoginComponent},
-  {path:"signup",component:LoginComponent}
+  {path:"signup",component:LoginComponent},
+  {path:"contactus",component:ContactUs}
 ];
 
 @NgModule({

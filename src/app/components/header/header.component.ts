@@ -37,6 +37,8 @@ export class HeaderComponent implements OnInit{
         break;
       case "SIGN_UP": this.router.navigate(["signup"]);
         break;
+      case "CONTACT_US": this.router.navigate(["contactus"]);
+        break;
     }
   }
 
