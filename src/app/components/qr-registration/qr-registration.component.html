@@ -3,65 +3,68 @@
 <div class="d-flex flex-column justify-content-center align-items-center m-1" 
     style="height: 100%;">
     <div><img src="assets/qr-registration/ok.png"/></div>
-    <div class="text-center fw-bold text-success fs-3"><span>Thanks for showing you interest in this webinar !</span></div>
+    <div class="text-center fw-bold text-success fs-3"><span>Thanks for showing you interest in this course !</span></div>
     <div class="text-center fs-4 rounded-3 p-2" style="background-color: cornflowerblue;"><span>Details will be shared with you on your registered email <strong>{{userData.email}}</strong> and whatsapp number <strong>{{userData.mobile}}</strong>.</span></div>
     <div class="text-center fs-5">Please visit our website <a href="https://skillsahead.net" class="text-primary">https://skillsahead.net</a> for more details.</div>
 </div>
 }
 @else {
     <div class="login-wrap">
-    <div class="login-html" style="text-align: center;">
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Registration</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" hidden>Review</label>
-        <div class="login-form">
-        <form [formGroup]="qrRegistrationForm" (ngSubmit)="initiatePayment()">
-        <div class="sign-in-htm row mx-0">
-            <div class="group col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <input id="firstName" placeholder="First Name*" type="text" class="input" [ngClass]="{'invalidForm':(qrRegistrationForm.touched || qrRegistrationFormSubmitted) && qrRegistrationForm.get('firstName')?.hasError('required')}" formControlName="firstName">
-            </div>
-            <div class="group col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <input id="middleName" placeholder="Middle Name" type="text" class="input" formControlName="middleName">
-            </div>
-            <div class="group col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
-            <input id="lastName" placeholder="Last Name" type="text" class="input" formControlName="lastName">
-            </div>
-            <div class="group col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <input type="email" placeholder="Email*" name="email" class="input" [ngClass]="{'invalidForm':(qrRegistrationForm.touched || qrRegistrationFormSubmitted) && qrRegistrationForm.get('email')?.hasError('required')}" formControlName="email">
-            </div>
-            <div class="group col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <input type="mobile" placeholder="Whatsapp Number*" name="mobile" class="input" [ngClass]="{'invalidForm':(qrRegistrationForm.touched || qrRegistrationFormSubmitted) && qrRegistrationForm.get('mobile')?.hasError('required')}" formControlName="mobile">
-            </div>
-            <div class="group col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <input type="mobile" placeholder="Location" name="location" class="input" formControlName="location">
-            </div>
-            <div class="group" style="color: grey; text-align: left;">
-                <div class="row mx-0">
-                    <label>Occupation ? </label>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                        <input class="form-check-input" type="radio" name="occupation" id="studentRadio" formControlName="occupation" value="STUDENT">
-                        <label class="form-check-label" for="studentRadio">&nbsp;Student</label>
-                    </div>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                        <input class="form-check-input" type="radio" name="occupation" id="jobSeekerRadio" formControlName="occupation" value="JOB_SEEKER">
-                        <label class="form-check-label" for="jobSeekerRadio">&nbsp;Job Seeker</label>
-                    </div>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                        <input class="form-check-input" type="radio" name="occupation" id="workingProfessionalRadio" formControlName="occupation" value="WORKING_PROFESSIONAL">
-                        <label class="form-check-label" for="workingProfessionalRadio">&nbsp;Working Professional</label>
-                    </div>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                        <input class="form-check-input" type="radio" name="occupation" id="otherRadio" formControlName="occupation" value="OTHER">
-                        <label class="form-check-label" for="otherRadio">&nbsp;Other</label>
+        <div class="login-html" style="text-align: center;">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Management Development Program | AI Intervention</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" hidden>Review</label>
+            <div class="login-form">
+            <form [formGroup]="qrRegistrationForm" (ngSubmit)="initiatePayment()">
+            <div class="sign-in-htm row mx-0">
+                <div class="group col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <input id="firstName" placeholder="First Name*" type="text" class="input" [ngClass]="{'invalidForm':(qrRegistrationForm.touched || qrRegistrationFormSubmitted) && qrRegistrationForm.get('firstName')?.hasError('required')}" formControlName="firstName">
+                </div>
+                <div class="group col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <input id="middleName" placeholder="Middle Name" type="text" class="input" formControlName="middleName">
+                </div>
+                <div class="group col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <input id="lastName" placeholder="Last Name" type="text" class="input" formControlName="lastName">
+                </div>
+                <div class="group col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input type="email" placeholder="Email*" name="email" class="input" [ngClass]="{'invalidForm':(qrRegistrationForm.touched || qrRegistrationFormSubmitted) && qrRegistrationForm.get('email')?.hasError('required')}" formControlName="email">
+                </div>
+                <div class="group col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input type="mobile" placeholder="Whatsapp Number*" name="mobile" class="input" [ngClass]="{'invalidForm':(qrRegistrationForm.touched || qrRegistrationFormSubmitted) && qrRegistrationForm.get('mobile')?.hasError('required')}" formControlName="mobile">
+                </div>
+                <div class="group col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input type="mobile" placeholder="Location" name="location" class="input" formControlName="location">
+                </div>
+                <div class="group" style="color: grey; text-align: left;">
+                    <div class="row mx-0">
+                        <label>Occupation ? </label>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <input class="form-check-input" type="radio" name="occupation" id="studentRadio" formControlName="occupation" value="STUDENT">
+                            <label class="form-check-label" for="studentRadio">&nbsp;Student</label>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <input class="form-check-input" type="radio" name="occupation" id="jobSeekerRadio" formControlName="occupation" value="JOB_SEEKER">
+                            <label class="form-check-label" for="jobSeekerRadio">&nbsp;Job Seeker</label>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <input class="form-check-input" type="radio" name="occupation" id="workingProfessionalRadio" formControlName="occupation" value="WORKING_PROFESSIONAL">
+                            <label class="form-check-label" for="workingProfessionalRadio">&nbsp;Working Professional</label>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                            <input class="form-check-input" type="radio" name="occupation" id="otherRadio" formControlName="occupation" value="OTHER">
+                            <label class="form-check-label" for="otherRadio">&nbsp;Other</label>
+                        </div>
                     </div>
                 </div>
+                <div class="group">
+                <input type="submit" class="button text-white" value="Proceed to Pay">
+                </div>
+                <div style="color: grey;">
+                    <span><a href="/assets/policy/privacy_statement.pdf">Privacy Policy</a></span> | <span><a href="/assets/policy/terms_of_services.pdf">Terms of Services</a></span> | <span><a href="/assets/policy/refund_policy.pdf">Refund Policy</a></span>
+                </div>
             </div>
-            <div class="group">
-            <input type="submit" class="button text-white" value="Proceed to Pay">
+            </form>
             </div>
         </div>
-        </form>
-        </div>
-    </div>
     </div>
 }
 

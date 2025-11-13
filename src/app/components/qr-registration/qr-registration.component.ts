@@ -70,6 +70,8 @@ export class QrRegistrationComponent implements OnInit{
   showPaymentCompletedMessage:boolean = false;
 
   //http://localhost:4200/qr-registration?data={"courseId":"aa529bb9-9fac-44eb-a20d-849e2b8137d7","courseTitle":"Online Webinar","courseFee":"10","courseDurationInHrs":"20"}
+  //http://localhost:4200/qr-registration?data={"courseId":"c2189baa-60f9-4962-b4df-c0e6ff49a9cb"}
+  
   constructor(@Inject(LOCALE_ID) public locale:string,
               private sharedService:SharedServiceService,
               private apiService:ApiServiceService,
